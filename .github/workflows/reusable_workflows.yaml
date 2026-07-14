@@ -9,13 +9,13 @@ on:
 
 jobs:
   build: 
-    runs-on: ubunutu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: code checkout
         uses: actions/checkout@v4
 
       - name: setup node
-        uses: actions/node-setup@v4
+        uses: actions/setup-node@v4
         with:
           node-version: ${{inputs.node_version}}
 
@@ -24,7 +24,7 @@ jobs:
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys:
+          restore-keys: |
             ${{runner.os}}-node-
 
       - name: Install depedencies
