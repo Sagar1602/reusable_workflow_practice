@@ -1,2 +1,11 @@
 name: caller_workflow
-on: push
+on: 
+  push:
+    branches: [main]
+
+jobs:
+  call-build:
+    uses: ./.github/workflows/reusable_workflows.yaml
+    with:
+      node-version: '20'
+  
