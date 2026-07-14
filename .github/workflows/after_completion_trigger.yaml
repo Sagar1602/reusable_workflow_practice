@@ -1,1 +1,19 @@
+name: after_completion_trigger
+on: 
+  workflow_call: [caller_workflow]
+    types:
+      - completed
 
+jobs:
+  react:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Show trigger source
+        run: |
+          echo "Triggered by: ${{ github.event.workflow_run.name }}"
+          echo "Conclusion: ${{ github.event.workflow_run.conclusion }}"
+
+      - name: Only run if build succeeded
+        if: ${{ github.event.workflow_run.conclusion == 'success' }}
+        run: echo "Build succeeded - proceeding with deploy/notify step here."
+    
