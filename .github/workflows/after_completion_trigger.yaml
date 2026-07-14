@@ -1,6 +1,6 @@
 name: after_completion_trigger
-on: 
-  workflow_run: [caller_workflow]
+on:
+  workflow_run: [ "caller_workflow"]
     types:
       - completed
 
