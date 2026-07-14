@@ -7,5 +7,5 @@ jobs:
   call-build:
     uses: ./.github/workflows/reusable_workflows.yaml
     with:
-      node-version: '20'
+      node-version: '24'
   
