@@ -1,0 +1,15 @@
+{
+  "name": "practice-app",
+  "version": "1.0.0",
+  "description": "Minimal app for practicing GitHub Actions CI/CD",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo 'Build step ran successfully'",
+    "test": "node test.js",
+    "start": "node index.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
