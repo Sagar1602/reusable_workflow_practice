@@ -2,7 +2,7 @@ name: reusable_workflows
 on:
   workflow_call:
     inputs:
-      node_version:
+      node-version:
         required: false
         type: string
         default: '20'
@@ -17,7 +17,7 @@ jobs:
       - name: setup node
         uses: actions/setup-node@v4
         with:
-          node-version: ${{inputs.node_version}}
+          node-version: ${{inputs.node-version}}
 
       - name: cache npm depedencies
         uses: actions/cache@v4
